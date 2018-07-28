@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM的元素访问方法</title>
+</head>
+<body>
+    <p id="p1" class="p2">第一个</p>
+    <p id="p3" class="p2">第二个</p>
+    <p id="p4" class="p2">第三个</p>
+    <script>
+        document.getElementById("p1").style.color="green"
+        var ps=document.getElementsByTagName("p")
+        for(var i=0,len=ps.length;i<len;i++){
+            ps[i].style.fontSize="20px"
+        }
+        ps=document.getElementsByClassName("p2");
+        for(var i=0,len=ps.length;i<len;i++){
+            ps[i].style.fontStyle="italic"
+        }
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建元素节点并将其加入文档</title>
+</head>
+<body>
+    <button id="btn1" onclick="deleteFirstLine()">删除第一行</button>
+    <button id="btn2" onclick="replaceSecondLine()">替换第二行</button>
+    <button id="p3">在p2之前插入</button>
+    <p id="p1">一切都已结束</p>
+    <p id="p2">不，结束也是一种开始</p>
+    
+    
+    <script>
+        var pEle = document.createElement("p")
+        var text = document.createTextNode("一切都开始开始了")
+        pEle.appendChild(text)
+        document.getElementsByTagName("body")[0].appendChild(pEle)
+
+
+        function deleteFirstLine() {
+            //要删除一个元素必须得获取该元素的父元素，可直接获取，或通过子元素parentNode获取
+            var removeNode = document.getElementById("p1")
+            removeNode.parentNode.removeChild(removeNode)
+            document.getElementById("btn1").style.display = "none"
+
+        }
+
+        function replaceSecondLine() {
+            var bNode = document.createElement("em")
+            bNode.appendChild(document.createTextNode("一切都变了，回不去了"))
+            bNode.style.color = "red";
+            var replacedNode = document.getElementById("p2")
+            replacedNode.parentNode.replaceChild(bNode, replacedNode);
+        }
+
+        var inser = function () {
+            var newEle = document.createElement("i");
+            newEle.appendChild(document.createTextNode("人生若只如初见，何事秋风悲画扇"))
+            var p2=document.getElementById("p2");
+            var brNode=document.createElement("br");
+            p2.parentNode.insertBefore(newEle,p2 );
+            p2.parentNode.insertBefore(brNode,p2)
+        }
+
+        var p3 = document.getElementById("p3");
+        p3.onclick = function () {
+            inser();
+        }
+    
+    
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试DOM一些关键的节点属性</title>
+    <script>
+        document.write("我不会是第一行<br>")
+    </script>
+  
+</head>
+<body id="body2">
+    <!--<p id="p1">留有一颗好奇的心</p>-->
+    <!--<p id="p2">它是你前进的助力</p>-->
+   
+    <div id="div1">
+        <p id="p3">坚持是失败的敌人</p>
+        <p id="p1">留有一颗好奇的心</p>
+    </div>
+   
+    
+    <script>
+        // 只有元素才有innerHTML属性，元素节点没有
+        var div=document.getElementById("div1")
+        // alert(document.body.innerHTML)
+        // alert(document.documentElement.innerHTML)
+        //通过childNodes和nodeValue获得元素的文本值
+       
+     
+       //  alert(div.firstChild.nodeValue)
+        div.firstChild.nodeValue="我爱你"
+        div.lastChild.nodeValue="我恨你"
+        // div.childNodes[1].innerHTML=生死不过一瞬;
+        alert(div.childNodes[0].nodeValue)
+        alert(div.childNodes[1].innerHTML)
+        alert(div.childNodes[2].innerHTML)
+        alert(div.childNodes[3].nodeValue)
+        // alert(div.firstChild.nodeValue);
+        
+        var ps=document.getElementsByTagName("p")
+        for(var i=0;i<ps.length;i++){
+            ps[i].innerHTML+=i;
+        }
+
+   
+    
+    
+    
+    </script>
+    
+    
+</body>
+</html>

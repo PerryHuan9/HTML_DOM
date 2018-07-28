@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试onchange事件</title>
+    <style>
+        body > div {
+            max-width: 900px;
+            margin: 10px auto;
+            border: 1px red solid;
+            padding: 30px;
+            min-height: 100px;
+        }
+        
+        #mouse > div {
+            width: 100px;
+            height: 100px;
+            background-color: chartreuse;
+        }
+        
+        #div > span {
+            color: white;
+            display: inline-block;
+            font-size: 20px;
+            margin: 30px 20px;
+            visibility: hidden;
+        }
+    
+    
+    </style>
+    
+    <script>
+        function uncaseInput() {
+            var name = document.getElementById("name");
+            name.value = name.value.toUpperCase();
+        }
+
+        function mouseover() {
+            var span = document.getElementById("span");
+            span.style.visibility = "visible";
+        }
+
+        function mouseout() {
+            var span = document.getElementById("span");
+            span.style.visibility = "hidden";
+        }
+
+
+        function mousedown() {
+            var em = document.getElementById("em");
+            var div2 = document.getElementById("div2");
+            div2.style.backgroundColor = "red";
+            em.innerHTML = "松开鼠标";
+        }
+
+        function mouseup() {
+            var em = document.getElementById("em");
+            var div2 = document.getElementById("div2");
+            div2.style.backgroundColor = "black";
+            em.innerHTML = "点击我";
+        }
+    
+    
+    </script>
+
+</head>
+<body>
+    
+    <div>
+        enter you name: <input type="text" onchange="uncaseInput()" id="name"><br>
+    </div>
+    
+    <div id="mouse">
+        <div id="div" onmouseout="mouseout()" onmouseover="mouseover()">
+            <span id="span">
+                你好啊
+            </span>
+        </div>
+    
+    </div>
+    <div id="mouse2">
+        <div style="width: 100px;height: 100px;background-color: black" id="div2"                             onmousedown="mousedown()" onmouseup="mouseup()">
+            <em style="color: white;margin: 30px 10px;display: inline-block" id="em">点击我</em>
+        </div>
+    
+    </div>
+
+
+</body>
+</html>

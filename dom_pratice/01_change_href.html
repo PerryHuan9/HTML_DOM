@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变链接的文本、href和target</title>
+</head>
+<body>
+    <a href="http://www.baidu.com" target="_self">百度</a><br>
+    <button id="btn1">改变链接</button>
+    <script>
+        document.getElementById("btn1").onclick=function (ev) {
+            var a=document.getElementsByTagName("a")[0];
+            a.innerHTML="W3school"
+            a.href="http://www.W3school.com.cn"
+            a.target="_blank"
+        }
+        
+        
+    </script>
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试DOM的innerHTML属性</title>
+    <!--所有元素都有innerHTML属性，该属性可获取元素内的值（包括元素节点）和设置元素内的值-->
+
+
+</head>
+<body id="b">
+    你是谁
+    <p id="p">I am Perry.</p>
+
+
+</body>
+<script>
+    // document.getElementById("b").innerHTML="who are you?"
+    var p = document.getElementById("b").innerHTML;
+    document.getElementById("p").innerHTML = p;
+
+</script>
+</html>

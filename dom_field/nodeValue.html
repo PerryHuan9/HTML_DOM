@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试DOM属性nodeValue</title>
+    <!--元素节点的nodeValue为undefine或null-->
+    <!--文本节点的nodeValue为文本内容-->
+    <!--属性节点的nodeValue为属性的值-->
+    
+</head>
+<body>
+    <p id="p" style="color: red">
+       我是p下子节点-文本节点的值 <b>我是祖踢</b></p>
+    
+    <img src="" alt="图片无法显示" width="100px" id="img">
+    <br>
+    
+    <script>
+        var p=document.getElementById("p");
+        document.write("p.nodeValue:"+p.nodeValue+"<br>")
+        //只有文本节点的nodevalue有值，其它节点的没有
+        alert(p.firstChild);
+        document.write("p.firstChild.nodeValue:"+p.firstChild.nodeValue+"<br>")
+        document.write("p.lastChild.nodevalue:"+p.lastChild.nodeValue+"<br>");
+        p.firstChild.nodeValue="我被改变了"
+        document.write(p.style.color)
+        var img=document.getElementById("img");
+        document.write(img.width)
+        
+        // document.write(img.nodeType)
+        
+        
+        
+    </script>
+    
+    
+</body>
+</html>

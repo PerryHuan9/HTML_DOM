@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变链接</title>
+    <script>
+       
+        var is360=false;
+        var change_hreef=function () {
+            var a=document.getElementById("a");
+            if(is360){
+                a.innerHTML="百度";
+                a.href="http://www.baidu.com";
+                is360=false;
+            }else{
+                a.innerHTML="360"
+                a.href="http://www.360.com";
+                is360=true;
+            }
+            a.target="_blank";
+        }
+        
+    </script>
+    
+</head>
+<body>
+    <a href="http://www.baidu.com" target="_blank" id="a" >百度</a>
+    <input type="button" value="改变链接" onclick="change_hreef()">
+    
+</body>
+</html>
